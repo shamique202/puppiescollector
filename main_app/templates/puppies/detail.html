@@ -9,11 +9,15 @@
         <p>Breed: {{ puppy.breed }}</p>
         <p>Description: {{ puppy.description }}</p>
         {% if puppy.age > 0 %}
-        <p>Age: {{ puppy.age }}</p>
-        {% else %}
         <p>Age: Puppy</p>
         {% endif %}
     </div>
+    <!-- Add the following markup -->
+    <div class="card-action">
+        <a href="{% url 'puppies_update' puppy.id %}">Edit</a>
+        <a href="{% url 'puppies_delete' puppy.id %}">Delete</a>
+    </div>
+    <!-- New markup above -->
 </div>
 
 {% endblock %}

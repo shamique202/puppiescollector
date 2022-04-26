@@ -1,6 +1,7 @@
 from django.shortcuts import render
 # import a create view 
-from django.views.generic.edit import CreateView
+# import UpdateView, DeleteView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
 # Add the following import
 from .models import Puppy
 
@@ -11,7 +12,17 @@ from .models import Puppy
 class PuppyCreate(CreateView):
     model = Puppy
     fields = '__all__'
-    success_url = '/cats/'
+    success_url = '/puppies/'
+class PuppyUpdate(UpdateView):
+  model = Puppy
+  # Let's disallow the renaming of a Puppy by excluding the name field!
+  fields = ['breed', 'description', 'age']
+
+class PuppyDelete(DeleteView):
+  model = Puppy
+  success_url = '/puppies/'
+
+
 
 # Define the home view
 def home(request):
