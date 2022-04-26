@@ -22,9 +22,10 @@
                     <li><a href="/" class="left brand-logo">&nbsp;&nbsp;PuppiesCollector</a></li>
                 </ul>
                 <ul class="right">
-                    <li><a href="/about">About</a></li>
-                    <!-- new markup below -->
-                    <li><a href="/puppies">View All My Puppies</a></li>
+                    <!-- <li><a href="/about">About</a></li> -->
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'puppies_create' %}">Add A Puppy</a></li>
+                    <li><a href="{% url 'index' %}">View All My Puppies</a></li>
                 </ul>
             </div>
         </nav>

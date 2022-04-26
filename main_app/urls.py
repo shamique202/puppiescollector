@@ -7,4 +7,5 @@ urlpatterns = [
   # route for cats index
   path('puppies/', views.puppies_index, name='index'),
   path('puppies/<int:puppy_id>/', views.puppies_detail, name='detail'),
+  path('puppies/create/', views.PuppyCreate.as_view(), name='puppies_create'),
 ]
