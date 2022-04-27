@@ -6,5 +6,4 @@ This Django-based application displays the name, age, breed, and descriptions of
 ## Programming Languages: 
 -  Python
 -  Django
--  HTML
--  CSS
+-  Materialize CSS
