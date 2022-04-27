@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect #always redirect after making changes to the database
 # import a create view 
 # import UpdateView, DeleteView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
@@ -41,6 +41,7 @@ def puppies_detail(request, puppy_id):
     'puppy': puppy, 'feeding_form': feeding_form
   })
 def add_feeding(request, puppy_id):
+  pass
 	# create the ModelForm using the data in request.POST
   form = FeedingForm(request.POST)
   # validate the form
@@ -51,3 +52,4 @@ def add_feeding(request, puppy_id):
     new_feeding.puppy_id = puppy_id
     new_feeding.save()
   return redirect('detail', puppy_id=puppy_id)
+  

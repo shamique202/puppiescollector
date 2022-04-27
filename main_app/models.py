@@ -34,9 +34,13 @@ class Feeding(models.Model):
   )
   puppy = models.ForeignKey(Puppy, on_delete=models.CASCADE)
   def __str__(self):
-		    # this method will gives us the friendly meal choices value, so like Breakfast instead of B
-		    return f"{self.get_meal_display()} on {self.date}"
-   
+    # Nice method for obtaining the friendly value of a Field.choice
+    return f"{self.get_meal_display()} on {self.date}"
+
+  # change the default sort
+  class Meta:
+    ordering = ['-date']
+
     
 
 	 
