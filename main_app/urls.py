@@ -11,4 +11,5 @@ urlpatterns = [
   # Add the new routes below
   path('puppies/<int:pk>/update/', views.PuppyUpdate.as_view(), name='puppies_update'),
   path('puppies/<int:pk>/delete/', views.PuppyDelete.as_view(), name='puppies_delete'),
+  path('puppies/<int:puppy_id>/add_feeding/', views.add_feeding, name='add_feeding'),
 ]
